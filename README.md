@@ -1,3 +1,3 @@
 # Classification_AlexNet
 AlexNet구현
-#AlexNet 정리
+# AlexNet 정리
