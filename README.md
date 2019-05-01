@@ -5,56 +5,40 @@
 ## AlexNet 특징
 
 1. 3개의 fully-connected layer과 5개의 convolutional layer 사용
-
 2. 2.기존 모델들과 다르게 activation function으로 Relu를 이용하여 학습시간을 매우 단축했다.
-
 3. ReLU 적용후 Local Response Normalization 적용함(첫번째, 두번째 Convolutional Layer에만 적용).
-
 4. pooling size =3 stride =2를 사용하여 겹치는 max pooling을 사용하였는데 이것이 오버피팅을 막는데 도움을 주었다(첫번째, 두번째, 다섯번째 Convolutional Layer에 적용). 
-
 5. fully-connected 부분에서 뉴런이 동조화 하는것을 막기 위해 drop out을 0.5로 적용했다. 단 테스트시에 output에 0.5를 곱해주어야 한다.
-
 6. data agum entation을 활용해 256x256이미지를 랜덤으로 227x227로 학습데이터를 늘려 오버피팅을 방지하였다.
-
 7. ImageNet 2,000개 이상의 카테고리를 가진 레이블링된 고해상도 이미지 데이터 1500만개의 사용. 
-
 8. 5-6일간 GTX 580 3GB GPU 2개를 가지고 학습함. 
-
 9. 사용된 입력 이미지 사이즈는 256x256x3(RGB)로 고정하여 사용함.(256보다 작은 사이즈는 center에 위치하도록 하여 256 사이즈를 만족시킴)
 
-10. 
+## AlexNet의 Architecture
 
-    ## AlexNet의 Architecture
-   
-    
+[227x227x3] input layer 
 
-    [227x227x3] input layer 
+[55x55x96] Conv1
 
-    [55x55x96] Conv1
+[27x27x96] Max Pool 1
 
-    [27x27x96] Max Pool 1
+[27x27x256] Norm 1
 
-    [27x27x256] Norm 1
+[13x13x256] Max Pool 2
 
-    [13x13x256] Max Pool 2
+[13x13x256] Norm 2
 
-    [13x13x256] Norm 2
+[13x13x384] Conv 3
 
-    [13x13x384] Conv 3
+[13x13x256] Conv 5
 
-    [13x13x256] Conv 5
+[6x6x256] Max Pool 3
 
-    [6x6x256] Max Pool 3
+[4096] Fully Connect 
 
-    [4096] Fully Connect 
+[4096] Fully Connect 
 
-    [4096] Fully Connect 
-
-    [1000] Fully Connect 
-
-    
-
-
+[1000] Fully Connect 
 
 ## 사용된 CNN Architecture
 
@@ -80,4 +64,6 @@
 
 # 출처
 
-  출처: <https://arclab.tistory.com/156> [Arc Lab.'s Blog] <http://aikorea.org/cs231n/convolutional-networks/> 
+  출처: <https://arclab.tistory.com/156> [Arc Lab.'s Blog] 	
+
+<http://aikorea.org/cs231n/convolutional-networks/> 
