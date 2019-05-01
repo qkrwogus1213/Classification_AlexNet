@@ -5,7 +5,7 @@
 ## AlexNet 특징
 
 1. 3개의 fully-connected layer과 5개의 convolutional layer 사용
-2. 2.기존 모델들과 다르게 activation function으로 Relu를 이용하여 학습시간을 매우 단축했다.
+2. 기존 모델들과 다르게 activation function으로 Relu를 이용하여 학습시간을 매우 단축했다.
 3. ReLU 적용후 Local Response Normalization 적용함(첫번째, 두번째 Convolutional Layer에만 적용).
 4. pooling size =3 stride =2를 사용하여 겹치는 max pooling을 사용하였는데 이것이 오버피팅을 막는데 도움을 주었다(첫번째, 두번째, 다섯번째 Convolutional Layer에 적용). 
 5. fully-connected 부분에서 뉴런이 동조화 하는것을 막기 위해 drop out을 0.5로 적용했다. 단 테스트시에 output에 0.5를 곱해주어야 한다.
