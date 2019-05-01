@@ -25,9 +25,7 @@
 10. 
 
     ## AlexNet의 Architecture
-    
-
-    ![alexnet](C:\Users\parkjaehyun\Desktop\alexnet.PNG)
+   
     
 
     [227x227x3] input layer 
